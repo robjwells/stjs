@@ -4,7 +4,7 @@ import readline from "readline";
 export const isFile = async (filename) =>
   (await fs.statAsync(filename)).isFile();
 
-export const rejectNonFilesWithwWarning = async (filename, ..._rest) => {
+export const rejectNonFilesWithwWarning = async (filename) => {
   if (await isFile(filename)) {
     return true;
   } else {

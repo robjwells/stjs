@@ -10,7 +10,7 @@ console.log(Promise.resolve("hello").then((result) => console.log(result)));
 // in.
 
 // As above.
-const p = new Promise((resolve, reject) => resolve("hello")).then((result) =>
+const p = new Promise((resolve) => resolve("hello")).then((result) =>
   console.log(result)
 );
 console.log(p);

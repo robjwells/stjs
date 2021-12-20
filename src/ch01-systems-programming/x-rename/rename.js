@@ -1,7 +1,5 @@
 import fs from "fs";
-import glob from "glob";
 import path from "path";
-import { exit } from "process";
 
 const [oldExt, newExt, ...files] = process.argv.slice(2);
 

@@ -10,7 +10,7 @@ const main = async () => {
     return map;
   }, new Map());
   const inOrder = Array.from(counter).sort(
-    ([lengthA, _a], [lengthB, _b]) => lengthA - lengthB
+    ([lengthA], [lengthB]) => lengthA - lengthB
   );
 
   console.log("Length\tNumber of Files\n======\t===============");

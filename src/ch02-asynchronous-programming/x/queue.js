@@ -11,7 +11,7 @@ export class Queue {
     push(value) {
         const newLength = this.buffer.push(value);
         if (newLength > this.limit) {
-            const _ = this.buffer.shift();
+            this.buffer.shift();
         }
     }
     pop() {
@@ -21,7 +21,7 @@ export class Queue {
     enqueue(value) {
         const newLength = this.buffer.unshift(value);
         if (newLength > this.limit) {
-            const _ = this.buffer.pop();
+            this.buffer.pop();
         }
     }
     dequeue() {

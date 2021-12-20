@@ -1,6 +1,6 @@
 import Pledge from "./pledge.js";
 
-new Pledge((resolve, reject) => {
+new Pledge((resolve) => {
   console.log("top of a single then cause");
   setTimeout(() => {
     console.log("about to call resolve callback");
