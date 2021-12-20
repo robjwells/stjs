@@ -1,4 +1,4 @@
-new Promise((resolve, reject) => reject(new Error("failure")))
+new Promise((_resolve, reject) => reject(new Error("failure")))
   .catch((err) => console.log(`Caught: ${err}`))
   // I don't think this is going to work as you might imagine as I
   // believe that attaching a then after a catch expects that the catch

@@ -2,7 +2,7 @@ const returnAwait = async () => {
   try {
     return await Promise.reject(new Error("deliberate"));
   } catch (err) {
-    console.log("caught exception");
+    console.log(`caught exception: ${err.message}`);
   }
 };
 

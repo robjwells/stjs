@@ -1,6 +1,6 @@
 import Pledge from "./pledge.js";
 
-new Pledge((resolve, reject) => {
+new Pledge((_resolve, reject) => {
   console.log("Top of action callback with deliberate error.");
   setTimeout(() => {
     console.log("About to reject on purpose");

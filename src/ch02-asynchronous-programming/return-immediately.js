@@ -1,8 +1,8 @@
-const returnImmediately = async () => {
+const returnImmediately = () => {
   try {
     return Promise.reject(new Error("deliberate"));
   } catch (err) {
-    console.log("caught exception");
+    console.log(`caught exception: ${err.message}`);
   }
 };
 
