@@ -3,12 +3,15 @@ export class Queue<T> {
   private limit: number;
 
   constructor(limit: number = Infinity) {
+    if (limit <= 0) {
+      throw new Error("Limit cannot be <= 0.");
+    }
     this.limit = limit;
   }
 
-  private checkLength(): void {
+  private ensureNonEmpty(): void {
     if (this.buffer.length === 0) {
-      throw new Error("Attempted to pop from an empty Queue.");
+      throw new Error("Attempted to remove item from an empty Queue.");
     }
   }
 
@@ -20,20 +23,20 @@ export class Queue<T> {
   }
 
   pop(): T {
-    this.checkLength();
-    return this.buffer.pop();
+    this.ensureNonEmpty();
+    return this.buffer.pop() as T;
   }
 
-  enqueue(value: T): void {
+  pushLeft(value: T): void {
     const newLength = this.buffer.unshift(value);
     if (newLength > this.limit) {
       this.buffer.pop();
     }
   }
 
-  dequeue(): T {
-    this.checkLength();
-    return this.buffer.shift();
+  popLeft(): T {
+    this.ensureNonEmpty();
+    return this.buffer.shift() as T;
   }
 
   get length() {
